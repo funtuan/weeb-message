@@ -1,5 +1,8 @@
 
 liff.init({ liffId: '1656440130-6NBEgWBb' })
+if (!liff.isInClient()) {
+    liff.login()
+}
 
 
 function onTestChange() {
@@ -37,7 +40,9 @@ function transform(){
 
     });
 
-    document.getElementById("orig").value = '';
+    setTimeout(()=> {
+        document.getElementById("orig").value = '';
+    }, 100)
     liff.sendMessages([{
         'type': 'text',
         'text': new_text
