@@ -11,18 +11,20 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-0S56F43N93');
+      gtag('config', 'G-S5FPDCL904');
     </script>
     <link rel="stylesheet" href="main.css">
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script src="actions.js"></script>
     <script src="alter.js"></script>
-    <title>肥宅對話產生器</title>
+    <title>肥宅對話產生器 LINE 大聲公版</title>
 </head>
 <body>
   <div id="container">
     <h1>肥宅對話產生器</h1>
-    <textarea id="orig"></textarea>
-    <button id="transform" onclick="transform()">轉換</button>
-    <h3>結果：</h3>
+    <textarea id="orig" onkeypress="onTestChange()"></textarea>
+    <button id="transform" onclick="transform()">送出</button>
+    <h3>已發送</h3>
     <p id="result"></p>
   </div>
 </body>

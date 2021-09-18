@@ -1,6 +1,23 @@
+
+liff.init({ liffId: '1656440130-6NBEgWBb' })
+
+
+function onTestChange() {
+    var key = window.event.keyCode;
+
+    // If the user has pressed enter
+    if (key === 13) {
+        transform();
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
 function transform(){
     let text = document.getElementById("orig").value;
-    let text_array = text.split('\n');
+    let text_array = text.trim().split('\n');
     
     let new_text = "";
     text_array.forEach(line => {
@@ -20,7 +37,12 @@ function transform(){
 
     });
 
-    document.getElementById("result").innerHTML = new_text;
+    document.getElementById("orig").value = '';
+    liff.sendMessages([{
+        'type': 'text',
+        'text': new_text
+    }])
+    document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + '\n' + new_text;
 }
 
 function randomBool(p){
