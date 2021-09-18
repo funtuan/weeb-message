@@ -1,7 +1,7 @@
 
 liff.init({ liffId: '1656440130-6NBEgWBb' })
 if (!liff.isInClient()) {
-    liff.login()
+    alert('必須使用 LINE 開啟 https://liff.line.me/1656440130-6NBEgWBb 才可使用')
 }
 
 
@@ -36,7 +36,7 @@ function transform(){
         let prefix_index = Math.floor( Math.random() * prefixes.length );
         let prefix = have_prefix? prefixes[prefix_index] : '' ;
 
-        new_text += `${prefix} ${line} ${www} ${postfix} <br />`;
+        new_text += `${prefix} ${line} ${www} ${postfix}`;
 
     });
 
@@ -47,7 +47,7 @@ function transform(){
         'type': 'text',
         'text': new_text
     }])
-    document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + '\n' + new_text;
+    document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + '<br />' + new_text;
 }
 
 function randomBool(p){
